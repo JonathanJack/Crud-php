@@ -5,5 +5,8 @@ Proximas Versões:
 
 -Correção do bug de inserção de arquivo, onde o foreach está iteragindo uma vez a  mais do que devia.
 
--Melhoras no Layout
+-Validações
 
+-Tratamento de erros
+
+-Melhoras no Layout
