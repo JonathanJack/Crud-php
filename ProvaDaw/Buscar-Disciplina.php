@@ -2,7 +2,7 @@
     include 'conexao.php';
 
     $codigo = $_POST['codigo'];
-
+ 
     $sql = "SELECT * FROM DISCIPLINAS WHERE codigo = '$codigo'";
 
     $bucandoDisciplina = mysqli_query($conn,$sql);
@@ -29,18 +29,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-  <div>
-        <form action="Listar-Disciplinas.php" method="POST">            
-            <input type="submit" value="Listar Todos"></input>
-        </form>
-      </div>
-  <div>
-        <form action="Buscar-Disciplina.php" method="POST">
-            <input type="text" name="codigo" placeholder="Procure pelo codigo da disciplina"></input>
-            <input type="submit" value="Buscar"></input>
-        </form>
-      </div>
+  
+  <?php include 'cabecalho.html';?>
   <div class="container">
+  <div class="d-flex mt-4">
+      
+      <div class="w-100">
+            <form class="w-50 d-flex" action="Buscar-Disciplina.php" method="POST">
+                <input class="w-75 mr-3" type="text" name="codigo" placeholder="Procure pelo codigo da disciplina"></input>
+                <input type="submit" value="Buscar"></input>
+            </form>
+          </div>
+  </div>
       <table class="table">
           <thead>
               <tr>
@@ -66,10 +66,10 @@
                   </td> 
                   <td>
                   <td>
-                    <!-- <form action="Editar-Disciplinas.php" method="post">  -->
+                    <form action="Editar-Disciplinas.php" method="post"> 
                         <input type="HIDDEN" name="id" value="<?php echo $id?>"></input>
                         <input type="submit" value="EDIT"></input>                
-                    <!-- </form>   -->
+                    </form>  
                   </td> 
                   </td>
               </tr>
@@ -85,6 +85,11 @@
             </tr>                
           </tbody>
       </table>
+      <div>
+            <form action="Listar-Disciplinas.php" method="POST">            
+                <input type="submit" value="Listar Todos"></input>
+            </form>
+          </div>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
